@@ -8,7 +8,7 @@
 
     - name: Execute Firehose
       ansible.builtin.command:
-        cmd: python3 /tmp/firehose/awx/tools/scripts/firehose.py --jobs-per-hour=1 --events-per-job=1 --batch-size=1 --days-delta=1
+        cmd: python3 /tmp/firehose/tools/scripts/firehose.py --jobs-per-hour=1 --events-per-job=1 --batch-size=1 --days-delta=1
       register: result
 
     - name: Print Results from Firehose test
