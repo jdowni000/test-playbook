@@ -4,6 +4,7 @@
     - name: Git Checkout AWX Firehose
       ansible.builtin.git:
         repo: 'https://github.com/ansible/awx.git'
+        dest: /tmp
 
     - name: Execute Firehose
       ansible.builtin.command:
