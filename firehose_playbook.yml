@@ -1,0 +1,13 @@
+---
+- name: Git Checkout AWX Firehose
+  ansible.builtin.git:
+    repo: 'https://github.com/ansible/awx.git'
+    dest: /srv/checkout
+
+- name: Execute Firehose
+  ansible.builtin.command:
+    cmd: python3 /srv/checkout/awx/tools/scripts/firehose.py --jobs-per-hour=1 --events-per-job=1 --batch-size=1 --days-delta=1
+  register: result
+
+- debug:
+  msg: "{{ result }}"
